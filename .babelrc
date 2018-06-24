@@ -1,0 +1,24 @@
+{
+  "presets": [
+    ["env", { "modules": false }],
+    "react",
+    "stage-0"
+  ],
+  "plugins": ["transform-runtime",
+    "syntax-dynamic-import",
+    "transform-decorators-legacy",
+    ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }],
+    ["transform-imports", {
+      "lodash": {
+        "transform": "lodash/${member}",
+        "preventFullImport": true
+      }
+    }]],
+  "comments": false,
+  "env": {
+    "test": {
+      "presets": ["env", "stage-0"],
+      "plugins": [ "istanbul" ]
+    }
+  }
+}

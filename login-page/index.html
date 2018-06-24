@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>唐邦知识产权公司内部系统</title>
+    <link href="./login.css" rel="stylesheet" type="text/css">
+</head>
+<!--session过期后跳出frameset-->
+<script language="JavaScript">
+    if (window != top)
+        top.location.href = location.href;
+</script>
+<body>
+<div class="denglu">
+    <div class="mingcheng">唐邦知识产权公司内部系统</div>
+
+    <div class="biaodan">
+        <dl class="login-container">
+            <dt>用户名</dt>
+            <dd><input class="biaodankuang"   type="text" id="userName" name="userName"  placeholder="用户名"></dd>
+            <dt>密码</dt>
+            <dd><input class="biaodankuang"  id="password" name="password" type="password"   placeholder="密码">
+            </dd>
+        </dl>
+        <dl class="register-container">
+            <dt>用户名</dt>
+            <dd><input class="biaodankuang"   type="text" name="userName"  placeholder="用户名">
+            <div class="error"><span>+</span></div></dd>
+            <dt>姓名</dt>
+            <dd><input class="biaodankuang"   type="text" name="nickName"  placeholder="姓名">
+            <dt>密码</dt>
+            <dd><input class="biaodankuang"  name="password" type="password"   placeholder="密码">
+              <div class="error"><span>+</span></div>
+            </dd>
+            <dt>确认密码</dt>
+            <dd><input class="biaodankuang"  name="repassword" type="password"   placeholder="密码">
+            </dd>
+            <dt>省市</dt>
+            <dd>
+              <div id="city_1" class="prov-class">
+            		<select class="prov"></select>
+              	<select class="city" disabled="disabled"></select>
+              </div>
+              <div class="error"><span>+</span></div>
+            </dd>
+            <dt>电话</dt>
+            <dd><input class="biaodankuang"  name="phone" placeholder="请输入电话号码">
+              <div class="error"><span>+</span></div>
+            </dd>
+            <dt>部门</dt>
+            <dd><input class="biaodankuang"  name="department" type="text"   placeholder="请输入部门">
+              <div class="error"><span>+</span></div>
+            </dd>
+        </dl>
+    </div>
+    <div class="anniu pre-login">
+      <button id="loginBtn">登　　录</button>
+      <button id="jumptoRegist">注　　册</button>
+    </div>
+    <div class="regBtn-wrapper anniu pre-login">
+      <button id="returnLogin">返  回  登  录</button>
+      <button id="registBtn">注　　册</button>
+    </div>
+    <div class="banquan">唐邦知识产权公司内部系统版权所有&copy;2017</div>
+
+</div>
+<script type="text/javascript" src="./script/jquery-1.11.1.min.js"> </script>
+<script type="text/javascript" src="./script/md5.js"> </script>
+<script type="text/javascript" src="./script/js-cookie.js"> </script>
+<script type="text/javascript" src="./script/jquery.cityselect.js"> </script>
+<script type="text/javascript" src="./script/canvas-particle.js"></script>
+<script type="text/javascript" src="./script/login.js"> </script>
+<script src="./script/layer.js"></script>
+</body>
+</html>

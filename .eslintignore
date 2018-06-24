@@ -1,0 +1,6 @@
+build/*.js
+config/*.js
+mock/*.js
+static/
+test/
+login-page/
