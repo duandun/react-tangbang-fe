@@ -1,44 +1,61 @@
 import api from '@/api'
+import {
+  LIST_LOAD,
+  LIST_FAIL,
+  LIST_SUCCESS,
+  BEFORE_SAVE,
+  SAVE_SUCCESS,
+  SAVE_FAIL
+} from './actionTypes'
 
-export const LIST_LOAD = 'contract/LIST_LOAD'
-export const LIST_SUCCESS = 'contract/LIST_SUCCESS'
-export const LIST_FAIL = 'contract/LIST_FAIL'
-
-function listLoad (params) {
-  return {
-    type: LIST_LOAD,
-    params
-  }
-}
-
-function listSuccess ({results, params}) {
-  return {
-    type: LIST_SUCCESS,
-    results,
-    params
-  }
-}
-
-function listFail (error) {
-  return {
-    type: LIST_FAIL,
-    error
-  }
-}
-
-const search = (params, dispatch) => {
-  return api.contract.list(params)
-    .then(results => {
-      dispatch(listSuccess({results, params}))
-    })
-    .catch(err => {
-      dispatch(listFail(err))
-    })
-}
+// export function list (params) {
+//   return dispatch => {
+//     dispatch(listLoad(params))
+//     return search(params, dispatch)
+//   }
+// }
 
 export function list (params) {
+  return {
+    types: [LIST_LOAD, LIST_SUCCESS, LIST_FAIL],
+    promise: () => api.contract.list(params)
+  }
+}
+
+function beforeSave (params) {
+  return {
+    type: BEFORE_SAVE,
+    params
+  }
+}
+
+function saveFail (params) {
+  return {
+    type: SAVE_FAIL,
+    params
+  }
+}
+
+function saveSuccess (results) {
+  return {
+    type: SAVE_SUCCESS,
+    results
+  }
+}
+
+function saving (params, dispatch) {
+  return api.contract.save(params)
+    .then(results => {
+      dispatch(saveSuccess(results))
+    })
+    .catch(err => {
+      dispatch(saveFail(err))
+    })
+}
+
+export function save (params) {
   return dispatch => {
-    dispatch(listLoad(params))
-    return search(params, dispatch)
+    dispatch(beforeSave(params))
+    return dispatch(saving(params, dispatch))
   }
 }

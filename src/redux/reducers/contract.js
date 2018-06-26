@@ -2,7 +2,7 @@ import {
   LIST_LOAD,
   LIST_SUCCESS,
   LIST_FAIL
-} from '../actions/contract'
+} from '../actions/actionTypes'
 
 const initState = {
   isLoading: false,

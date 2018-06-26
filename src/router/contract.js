@@ -1,7 +1,7 @@
 const routers = [{
   name: 'contractAdd',
   path: '/contract/add',
-  component: () => import('components/contract/add')
+  component: () => import('components/contract/contract')
 }, {
   name: 'contractList',
   path: '/contract/list',

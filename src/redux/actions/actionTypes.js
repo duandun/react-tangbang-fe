@@ -1,0 +1,6 @@
+export const LIST_LOAD = 'contract/LIST_LOAD'
+export const LIST_SUCCESS = 'contract/LIST_SUCCESS'
+export const LIST_FAIL = 'contract/LIST_FAIL'
+export const BEFORE_SAVE = 'contract/BEFORE_SAVE'
+export const SAVE_SUCCESS = 'contract/SAVE_SUCCESS'
+export const SAVE_FAIL = 'contract/SAVE_FAIL'
