@@ -26,7 +26,7 @@ class RouteMap extends React.Component {
         <Switch>
           <Route path="/" component={Hello} exact />
           { makeRouters(ContractRouters).map((router, k) =>
-            <Route path={router.path} component={router.component} key={k} />) }
+            <Route path={router.path} render={(props) => <router.component {...props} meProp />} key={k} />) }
         </Switch>
       </Router>
     )

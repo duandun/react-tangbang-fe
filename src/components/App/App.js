@@ -60,7 +60,7 @@ export default class App extends React.Component {
             </div>
           </Content>
           <Footer style={{ textAlign: 'center' }}>
-            Ant Design ©2016 Created by Ant UED
+            Tang Bang
           </Footer>
         </Layout>
       </Layout>
